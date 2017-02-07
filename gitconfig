@@ -28,12 +28,12 @@
   ba = branch -a
   bd = branch -d
   bD = branch -D
+  d = diff # Also check the [pager]
 
   #
   # advanced usage
   #
   g = grep --break --heading --line-number
-  d = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy  | less --tabs=4 -RFX; }; f"
   lg  = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
   # 
