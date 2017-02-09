@@ -44,6 +44,7 @@
   up = !git pull --rebase --prune 
   gm = !git merge --no-ff
   rim = !git rebase -i origin/master
+  rima = !git rebase -i --autosquash origin/master
 
   # keep the commit only for git reflog usage and as a reference
   wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
