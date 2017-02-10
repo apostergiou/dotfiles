@@ -29,6 +29,16 @@
   bd = branch -d
   bD = branch -D
   d = diff # Also check the [pager]
+  
+  #
+  # stash ops
+  # 
+  st = stash save
+  pop = stash pop
+  popa = stash apply
+  sta = stash -u
+  stl = stash list
+  sts = stash show
 
   #
   # advanced usage
