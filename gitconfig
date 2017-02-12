@@ -1,73 +1,75 @@
-[color]
-  ui = true
-[core]
-  editor = emacsclient -t -a=\\\"\\\"
-[push]
-  default = simple
-[user]
-  name = Apostolis Stergiou
-  email = apostergiou@gmail.com
-[grep]
-  lineNumber = true
 [alias]
-  # list aliases
-  la = "!git config -l | grep alias | cut -c 7-"
+    # list aliases
+    la = "!git config -l | grep alias | cut -c 7-"
 
-  #
-  # simple usage
-  # 
-  p = push
-  s = status
-  co = checkout
-  c = commit
-  cam = !git add -A && git commit -m
-  cm = !git add -A && git commit
-  f = fetch -p
-  cob = checkout -b
-  m = checkout master
-  ba = branch -a
-  bd = branch -d
-  bD = branch -D
-  d = diff # Also check the [pager]
-  
-  #
-  # stash ops
-  # 
-  st = stash save
-  pop = stash pop
-  popa = stash apply
-  sta = stash -u
-  stl = stash list
-  sts = stash show
+    p = push
+    s = status
+    co = checkout
+    c = commit
+    cam = !git add -A && git commit -m
+    cm = !git add -A && git commit
+    f = fetch -p
+    cob = checkout -b
+    m = checkout master
+    ba = branch -a
+    bd = branch -d
+    bD = branch -D
+    d = diff # Also check the [pager]
 
-  #
-  # advanced usage
-  #
-  g = grep --break --heading --line-number
-  lg  = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    #
+    # stash ops
+    # 
+    st = stash save
+    pop = stash pop
+    popa = stash apply
+    sta = stash -u
+    stl = stash list
+    sts = stash show
 
-  # 
-  # improve work flow
-  #
-  save = !git add -A && git commit -m 'SAVEPOINT'
-  undo = reset HEAD~1 --mixed
-  up = !git pull --rebase --prune 
-  gm = !git merge --no-ff
-  rim = !git rebase -i origin/master
-  rima = !git rebase -i --autosquash origin/master
-  mo = merge --no-ff
+    #
+    # advanced usage
+    #
+    g = grep --break --heading --line-number
+    lg  = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
-  # keep the commit only for git reflog usage and as a reference
-  wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+    # 
+    # improve work flow
+    #
+    save = !git add -A && git commit -m 'SAVEPOINT'
+    undo = reset HEAD~1 --mixed
+    up = !git pull --rebase --prune 
+    gm = !git merge --no-ff
+    rim = !git rebase -i origin/master
+    rima = !git rebase -i --autosquash origin/master
+    mo = merge --no-ff
 
-  # cleanup merged braches
-  bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
-	
-  # 1. switch to master
-  # 2. run git up
-  # 3. run git bclean
-  bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
-  
+    # keep the commit only for git reflog usage and as a reference
+    wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+
+    # cleanup merged braches
+    bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
+
+    # 1. switch to master
+    # 2. run git up
+    # 3. run git bclean
+    bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
+
+[color]
+    ui = true
+
+[core]
+    editor = emacsclient -t -a=\\\"\\\"
+
+[push]
+    default = simple
+
+[grep]
+    lineNumber = true
+
 [pager]
-  diff = diff-so-fancy | less --tabs=4 -RFX
-  show = diff-so-fancy | less --tabs=4 -RFX
+    diff = diff-so-fancy | less --tabs=4 -RFX
+    show = diff-so-fancy | less --tabs=4 -RFX
+
+[user]
+    name = Apostolis Stergiou
+    email = apostergiou@gmail.com
