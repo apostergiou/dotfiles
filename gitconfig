@@ -14,6 +14,7 @@
     ba = branch -a
     bd = branch -d
     bD = branch -D
+    br = branch -av # Show all branches
     d = diff # Also check the [pager]
 
     #
@@ -53,6 +54,12 @@
     # 2. run git up
     # 3. run git bclean
     bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
+    
+    # Start a new local repository and perform initial commit
+    this = !git init && git add . && git commmit -m \"Initial commit.\"
+    
+    # Save a repo as a tarball
+    export = archive -o latest.tar.gz -9 --prefix=latest/
 
 [color]
     ui = true
