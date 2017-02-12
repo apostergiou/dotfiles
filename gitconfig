@@ -74,8 +74,8 @@
     untracked = red
     
 [core]
-    editor = emacsclient -t -a=\\\"\\\"
-
+    editor = vim
+    
 [push]
     default = simple
 
