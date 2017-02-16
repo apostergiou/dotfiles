@@ -60,6 +60,9 @@
     
     # Save a repo as a tarball
     export = archive -o latest.tar.gz -9 --prefix=latest/
+    
+    # List contributors with number of commits
+	contributors = shortlog --summary --numbered
 
 [color]
     ui = true
