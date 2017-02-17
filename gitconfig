@@ -16,6 +16,7 @@
     bD = branch -D
     br = branch -av # Show all branches
     d = diff # Also check the [pager]
+    iclean = clean -i
 
     #
     # stash ops
