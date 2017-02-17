@@ -31,7 +31,7 @@
     # advanced usage
     #
     g = grep --break --heading --line-number
-    lg  = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an <%ae>%Creset' --abbrev-commit
+    lg  = "!f() { git log --color --graph -n ${1-10} --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an <%ae>%Creset' --abbrev-commit; }; f"
 
     # 
     # improve work flow
