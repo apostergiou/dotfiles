@@ -46,6 +46,7 @@
     mo = merge --no-ff
     # Interactive rebase with the given number of latest commits
     reb = "!f() { git rebase -i HEAD~$1; }; f"
+    conflicts = !git g -e '<<<' -e '>>>' -e '^=======$'
 
     # keep the commit only for git reflog usage and as a reference
     wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
