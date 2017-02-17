@@ -44,7 +44,7 @@
     rima = !git rebase -i --autosquash origin/master
     mo = merge --no-ff
     # Interactive rebase with the given number of latest commits
-    reb = "!r() { git rebase -i HEAD~$1; }; r"
+    reb = "!f() { git rebase -i HEAD~$1; }; f"
 
     # keep the commit only for git reflog usage and as a reference
     wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
