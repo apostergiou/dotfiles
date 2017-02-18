@@ -38,10 +38,10 @@
     lg  = "!f() { git log --color --graph -n ${1-10} --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an <%ae>%Creset' --abbrev-commit; }; f"
     save = !git add -A && git commit -m 'SAVEPOINT'
     undo = reset HEAD~1 --mixed
-    up = !git pull --rebase --prune 
-    gm = !git merge --no-ff
-    reb = !git rebase -i origin/master
-    reba = !git rebase -i --autosquash origin/master
+    up = pull --rebase --prune 
+    gm = merge --no-ff
+    reb = rebase -i origin/master
+    reba = rebase -i --autosquash origin/master
     # Interactive rebase with the given number of latest commits
     ireb = "!f() { git rebase -i HEAD~$1; }; f"
     mo = merge --no-ff
