@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set ignore-case			   		= true
+set grep-view	            = file-name:yes, text
+set main-view             = id:yes date:default author:full commit-title:yes,graph,refs,overflow=no
+set blame-view            = date:default author:full file-name:auto id:yes,color , text
+set refs-view	            = id:no date:default author:full ref commit-title
+set stash-view            = id:no date:default author:full commit-title:yes
+set status-view	          = status:short file-name
+set tree-view             = mode author:full file-size:units date:default id:no file-name
+set blob-view						  = text:yes,commit-title-overflow=no
+set diff-view	  					= text:yes,commit-title-overflow=no
+set log-view							= text
+set pager-view						= text
+set stage-view						= text
+set reference-format      = (branch) <tag>
