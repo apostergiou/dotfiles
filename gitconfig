@@ -44,7 +44,7 @@
     # Interactive rebase with the given number of latest commits
     ireb = "!f() { git rebase -i HEAD~$1; }; f"
     mo = merge --no-ff
-    conflicts = !git g -e '<<<' -e '>>>' -e '^=======$'
+    conf = !git g -e '<<<' -e '>>>' -e '^=======$'
 
     # keep the commit only for git reflog usage and as a reference
     wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
@@ -64,7 +64,7 @@
     export = archive -o latest.tar.gz -9 --prefix=latest/
     
     # List contributors with number of commits
-    contributors = shortlog --summary --numbered
+    contr = shortlog --summary --numbered
 
 [color]
     ui = true
