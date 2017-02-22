@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set ignore-case      = true
-set grep-view        = file-name:yes, text
+set grep-view        = file-name, text
 set main-view        = id:yes date:default author:full commit-title:yes,graph,refs,overflow=no
-set blame-view       = date:default author:full file-name:auto id:yes,color , text
+set blame-view       = date:default author:full file-name:auto id:yes
 set refs-view        = id:no date:default author:full ref commit-title
 set stash-view       = id:no date:default author:full commit-title:yes
 set status-view      = status:short file-name
