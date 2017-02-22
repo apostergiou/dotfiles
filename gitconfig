@@ -38,11 +38,12 @@
     save = !git add -A && git commit -m 'SAVEPOINT'
     undo = reset HEAD~1 --mixed
     up = pull --rebase --prune 
+    review = !git reset --hard origin/master && git pull --prune
     gm = merge --no-ff
-    reb = rebase -i origin/master
-    reba = rebase -i --autosquash origin/master
+    rb = rebase -i origin/master
+    rba = rebase -i --autosquash origin/master
     # Interactive rebase with the given number of latest commits
-    ireb = "!f() { git rebase -i HEAD~$1; }; f"
+    irb = "!f() { git rebase -i HEAD~$1; }; f"
     mo = merge --no-ff
     conf = !git g -e '<<<' -e '>>>' -e '^=======$'
 
