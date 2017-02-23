@@ -39,11 +39,8 @@
     undo = reset HEAD~1 --mixed
     up = pull --rebase --prune 
     review = !git reset --hard origin/master && git pull --prune
-    gm = merge --no-ff
     rb = rebase -i origin/master
     rba = rebase -i --autosquash origin/master
-    # Interactive rebase with the given number of latest commits
-    irb = "!f() { git rebase -i HEAD~$1; }; f"
     mo = merge --no-ff
     conf = !git g -e '<<<' -e '>>>' -e '^=======$'
 
