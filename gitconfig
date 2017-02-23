@@ -17,7 +17,7 @@
     #
     ba = branch -a
     bd = branch -d
-    bD = branch -D
+    bdf = branch -D
     br = branch -av
 
     #
