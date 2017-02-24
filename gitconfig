@@ -11,28 +11,14 @@
     m = checkout master
     d = diff
     iclean = clean -i
-    
-    #
-    # branch ops
-    #
-    ba = branch -a
     bd = branch -d
     bdf = branch -D
     br = branch -av
-
-    #
-    # stash ops
-    # 
     st = stash save
     pop = stash pop
-    popa = stash apply
     sta = stash -u
     stl = stash list
     sts = stash show
-
-    # 
-    # improve work flow
-    #
     g = grep --break --heading --line-number
     lg  = "!f() { git log --color --graph -n ${1-10} --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an <%ae>%Creset' --abbrev-commit; }; f"
     save = !git add -A && git commit -m 'SAVEPOINT'
@@ -41,12 +27,13 @@
     review = !git reset --hard origin/master && git pull --prune
     rb = rebase -i origin/master
     rba = rebase -i --autosquash origin/master
-    mo = merge --no-ff
-    conf = !git g -e '<<<' -e '>>>' -e '^=======$'
+    
+    # show conflicts
+    confl = !git g -e '<<<' -e '>>>' -e '^=======$'
 
     # keep the commit only for git reflog usage and as a reference
     wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
-
+    
     # cleanup merged braches
     bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
 
@@ -55,13 +42,13 @@
     # 3. run git bclean
     bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
     
-    # Start a new local repository and perform initial commit
+    # start a new local repository and perform initial commit
     this = !git init && git add . && git commmit -m \"Initial commit.\"
     
-    # Save a repo as a tarball
+    # save a repo as a tarball
     export = archive -o latest.tar.gz -9 --prefix=latest/
     
-    # List contributors with number of commits
+    # list contributors
     contr = shortlog --summary --numbered
 
 [color]
