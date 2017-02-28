@@ -33,3 +33,5 @@ export HISTCONTROL=ignoreboth:erasedups
 # pbpaste | base64 | pbcopy
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+
+alias ls='ls -lh'
