@@ -35,3 +35,5 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
 alias tn='tmux new bash'
+
+export PATH=$HOME/bin:$PATH
