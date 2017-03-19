@@ -43,7 +43,7 @@
     bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
     
     # start a new local repository and perform initial commit
-    this = !git init && git add . && git commmit -m \"Initial commit.\"
+    this = !git init && git add . && git commit -m \"Initial commit.\"
     
     # save a repo as a tarball
     export = archive -o latest.tar.gz -9 --prefix=latest/
