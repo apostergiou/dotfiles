@@ -50,7 +50,10 @@
     
     # list contributors
     contr = shortlog --summary --numbered
-
+    
+    # Delete all branches except master
+    brdforce = !git branch | grep -v "master" | xargs git branch -D
+    
 [color]
     ui = true
 
