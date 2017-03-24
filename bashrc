@@ -34,6 +34,8 @@ export HISTCONTROL=ignoreboth:erasedups
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
-alias tn='tmux new bash'
+alias tn='tmux -2 new bash'
+alias em='emacsclient -t'
 
+export ALTERNATE_EDITOR=""
 export PATH=$HOME/bin:$PATH
