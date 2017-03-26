@@ -2,7 +2,7 @@ if [ -f /etc/bash_completion ]; then
         . /etc/bash_completion
 fi
 
-export PS1='[\w]\[$(tput sgr0)\] \[\033[38;5;2m\]\u\[$(tput sgr0)\]\[\033[38;5;11m\]$(__git_ps1)\[$(tput sgr0)\]\[\033[01;34m\] \n \$\[\033[00m\] '
+export PS1='\[\033[38;5;2m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\h\[$(tput sgr0)\]:\[\033[38;5;14m\][\w]\[$(tput sgr0)\]\[\033[38;5;11m\]$(__git_ps1)\[$(tput sgr0)\]\[\033[01;34m\] \n \$\[\033[00m\] '
 
 alias ls='ls --color'
 LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
