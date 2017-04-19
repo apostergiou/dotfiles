@@ -10,39 +10,20 @@
     f = fetch -p
     m = checkout master
     d = diff
-    iclean = clean -i
     
-    #
-    # branch ops
-    #
-    ba = branch -a
-    bd = branch -d
-    bdf = branch -D
-    br = branch -av
-
-    #
-    # stash ops
-    # 
-    st = stash save
-    pop = stash pop
-    popa = stash apply
-    sta = stash -u
-    stl = stash list
-    sts = stash show
-
     # 
     # improve work flow
     #
-    g = grep --break --heading --line-number
-    lg  = "!f() { git log --color --graph -n ${1-10} --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an <%ae>%Creset' --abbrev-commit; }; f"
+    prune = fetch --prune
+    glog  = "!f() { git log --color --graph -n ${1-100} --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset' --abbrev-commit; }; f"
+    ggrep = grep --break --heading --line-number
     save = !git add -A && git commit -m 'SAVEPOINT'
     undo = reset HEAD~1 --mixed
     up = pull --rebase --prune 
-    review = !git reset --hard origin/master && git pull --prune
     rb = rebase -i origin/master
     rba = rebase -i --autosquash origin/master
-    mo = merge --no-ff
     confl = !git g -e '<<<' -e '>>>' -e '^=======$'
+    stash-all = stash save --include-untracked
 
     # keep the commit only for git reflog usage and as a reference
     wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
