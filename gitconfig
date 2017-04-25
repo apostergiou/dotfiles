@@ -32,7 +32,7 @@
     bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
 
     # Start a new local repository and perform initial commit
-    this = !git init && git add . && git commit -m \"Initial commit.\"
+    this = !git init && git add . && git commit -m \"Initial commit\"
     
     # Save a repo as a tarball
     export = archive -o latest.tar.gz -9 --prefix=latest/
