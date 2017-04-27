@@ -127,3 +127,6 @@ alias suspend="systemctl suspend"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"
 eval "$(rbenv init -)"
+
+# bundle exec alias
+alias bex="bundle exec"
