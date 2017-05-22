@@ -131,5 +131,5 @@ eval "$(rbenv init -)"
 # bundle exec alias
 alias bex="bundle exec"
 
-# zsh-autosuggestios
-bindkey '^ ' autosuggest-execute
+# zsh-autosuggestions
+bindkey '^ ' autosuggest-accept
