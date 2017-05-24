@@ -10,8 +10,8 @@
     f = fetch -p
     m = checkout master
     d = diff
-    
-    # 
+
+    #
     # improve work flow
     #
     prune = fetch --prune
@@ -19,7 +19,7 @@
     ggrep = grep --break --heading --line-number
     save = !git add -A && git commit -m 'SAVEPOINT'
     undo = reset HEAD~1 --mixed
-    up = pull --rebase --prune 
+    up = pull --rebase --prune
     rb = rebase -i origin/master
     rba = rebase -i --autosquash origin/master
     confl = !git ggrep -e '<<<' -e '>>>' -e '^=======$'
@@ -33,15 +33,19 @@
 
     # Start a new local repository and perform initial commit
     this = !git init && git add . && git commit -m \"Initial commit\"
-    
+
     # Save a repo as a tarball
     export = archive -o latest.tar.gz -9 --prefix=latest/
-    
+
     # List contributors with number of commits
     contr = shortlog --summary --numbered
 
     # Delete all branches except master
     brdforce = !git branch | grep -v "master" | xargs git branch -D
+
+	  # Search commit logs
+	  # e.g. git cgrep "module"
+    cgrep = "!f() { git log --reverse --patch --pickaxe-all -S \"$1\"; }; f"
 
 [color]
     ui = true
@@ -61,10 +65,10 @@
     added = yellow
     changed = green
     untracked = red
-    
+
 [core]
     editor = vim
-    
+
 [push]
     default = simple
 
@@ -74,7 +78,7 @@
 [pager]
     diff = diff-so-fancy | less --tabs=4 -RFX
     show = diff-so-fancy | less --tabs=4 -RFX
-    
+
 [url "https://github.com/"]
     insteadOf = gh:
 
