@@ -131,5 +131,11 @@ eval "$(rbenv init -)"
 # bundle exec alias
 alias bex="bundle exec"
 
+# emacsclient alias
+alias em="emacsclient -t"
+
 # zsh-autosuggestions
 bindkey '^ ' autosuggest-accept
+
+# vim-stlye (hjkl) navigation for GNU info
+alias info='info --vi-keys'
