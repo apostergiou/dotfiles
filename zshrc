@@ -139,3 +139,31 @@ bindkey '^ ' autosuggest-accept
 
 # vim-stlye (hjkl) navigation for GNU info
 alias info='info --vi-keys'
+
+# open github page based on the remote.origin.url property of the git config
+alias github=GitHub
+
+function GitHub()
+{
+    if [ ! -d .git ] ;
+        then echo "ERROR: This isnt a git directory" && return false;
+    fi
+
+    git_url=`git config --get remote.origin.url`
+    git_domain=`echo $git_url | awk -v FS="(@|:)" '{print $2}'`
+    git_branch=`git rev-parse --abbrev-ref HEAD 2>/dev/null`
+
+    if [[ $git_url == https://* ]];
+    then
+        url=${git_domain}/${git_url%.git}/tree/${git_branch}
+    else
+       if [[ $git_url == git@* ]]
+       then
+            url="https://${git_domain}/${${git_url#*:}%.git}/tree/${git_branch}"
+            echo $url
+       else
+           echo "ERROR: Remote origin is invalid" && return false;
+       fi
+    fi
+    xdg-open $url
+}
