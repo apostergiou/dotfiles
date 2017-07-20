@@ -47,6 +47,9 @@
 	  # e.g. git cgrep "module"
     cgrep = "!f() { git log --reverse --patch --pickaxe-all -S \"$1\"; }; f"
 
+    # Save credentials to memory
+    cache = !git config credential.helper cache
+
 [color]
     ui = true
 
