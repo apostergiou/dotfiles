@@ -43,8 +43,8 @@
     # Delete all branches except master
     brdforce = !git branch | grep -v "master" | xargs git branch -D
 
-	  # Search commit logs
-	  # e.g. git cgrep "module"
+	# Search commit logs
+	# e.g. git cgrep "module"
     cgrep = "!f() { git log --reverse --patch --pickaxe-all -S \"$1\"; }; f"
 
     # Save credentials to memory
