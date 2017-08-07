@@ -39,3 +39,7 @@ augroup reload_vimrc " {
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
+
+" Disable indent guides by default
+" Enable/Disbale with `,ig`
+let g:indent_guides_enable_on_vim_startup = 0
