@@ -175,3 +175,14 @@ function GitHub()
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
+
+# fzf with preview window and code highlighting
+fzf_preview() {
+  fzf --preview '[[ $(file --mime {}) =~ binary ]] &&
+                  echo {} is a binary file ||
+                  (highlight -O ansi -l {} ||
+                  coderay {} ||
+                  rougify {} ||
+                  cat {}) 2> /dev/null | head -500'
+}
+alias preview='fzf_preview'
