@@ -186,3 +186,10 @@ fzf_preview() {
                   cat {}) 2> /dev/null | head -500'
 }
 alias preview='fzf_preview'
+
+# view git commits with fzf
+fzf_git_preview() {
+  git log --pretty=oneline --abbrev-commit |
+    fzf --preview 'echo {} | cut -f 1 -d " " | xargs git show --color=always'
+}
+alias git_preview='fzf_git_preview'
