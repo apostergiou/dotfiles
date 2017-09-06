@@ -264,3 +264,7 @@ alias fkill='fkill'
 # interactive cd
 # https://github.com/changyuheng/zsh-interactive-cd
 source zsh-interactive-cd.plugin.zsh
+
+# nvm
+export NVM_DIR="/home/apostergiou/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
