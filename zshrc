@@ -265,6 +265,10 @@ alias fkill='fkill'
 # https://github.com/changyuheng/zsh-interactive-cd
 source zsh-interactive-cd.plugin.zsh
 
-# nvm
-export NVM_DIR="/home/apostergiou/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# load nvm
+nvml() {
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+}
+alias nvml='nvml'
