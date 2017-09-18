@@ -1,0 +1,5 @@
+Bundle 'junegunn/fzf'
+Bundle 'junegunn/fzf.vim'
+UnBundle 'ctrlpvim/ctrlp.vim'
+UnBundle 'tacahiroy/ctrlp-funky'
+Bundle 'Yggdroot/indentLine'

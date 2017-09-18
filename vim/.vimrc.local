@@ -43,3 +43,17 @@ augroup END " }
 " Disable indent guides by default
 " Enable/Disbale with `,ig`
 let g:indent_guides_enable_on_vim_startup = 0
+
+nnoremap <silent> <leader>/ :Ag<CR>
+nnoremap <silent> <C-P> :Files<CR>
+
+" Do not change dir automatically
+set noautochdir
+
+" whitespace preferences
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+
+" mute highlighting
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
