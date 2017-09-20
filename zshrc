@@ -58,8 +58,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# want your terminal to support 256 color schemes? I do ...
-export TERM="xterm-256color"
+export TERM=xterm-256color
 
 # if you do a 'rm *', Zsh will give you a sanity check!
 setopt RM_STAR_WAIT
@@ -138,7 +137,7 @@ alias em="emacsclient -t"
 bindkey '^ ' autosuggest-accept
 
 # vim-stlye (hjkl) navigation for GNU info
-alias info='info --vi-keys'
+# alias info='info --vi-keys'
 
 # open github page based on the remote.origin.url property of the git config
 alias github=GitHub
@@ -171,11 +170,6 @@ function GitHub()
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# linuxbrew
-export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
-
 # fzf with preview window and code highlighting
 fzf_preview() {
   fzf --preview '[[ $(file --mime {}) =~ binary ]] &&
@@ -185,16 +179,15 @@ fzf_preview() {
                   rougify {} ||
                   cat {}) 2> /dev/null | head -500'
 }
-alias preview='fzf_preview'
 
-# view git commits with fzf
+# git preview
 fzf_git_preview() {
   git log --pretty=oneline --abbrev-commit |
     fzf --preview 'echo {} | cut -f 1 -d " " | xargs git show --color=always'
 }
-alias git_preview='fzf_git_preview'
 
-vf() {
+# fuzzy open with vim from anywhere
+fzf_vim() {
   local files
 
   files=(${(f)"$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1 -m)"})
@@ -205,28 +198,24 @@ vf() {
      print -l $files[1]
   fi
 }
-alias vf='vf'
 
-# fd - cd to selected directory
-fd() {
+# cd to selected directory
+fzf_cd() {
   local dir
   dir=$(find ${1:-.} -path '*/\.*' -prune \
                   -o -type d -print 2> /dev/null | fzf +m) &&
   cd "$dir"
 }
-alias fd='fd'
 
-# fda - including hidden directories
-fda() {
+# cd to directory including hidden directories
+fzf_cda() {
   local dir
   dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
 }
-alias fda='fda'
 
-# cf - fuzzy cd from anywhere
-# ex: cf word1 word2 ... (even part of a file name)
+# fuzzy cd from anywhere
 # zsh autoload function
-cf() {
+fzf_fcd() {
   local file
 
   file="$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1)"
@@ -241,16 +230,14 @@ cf() {
      fi
   fi
 }
-alias cf='cf'
 
 # search file contents with ag, respects gitignore
-fcs() {
+fzf_search() {
   ag --nobreak --nonumbers --noheading . | fzf
 }
-alias search='fcs'
 
 # fkill - kill process
-fkill() {
+fzf_kill() {
   local pid
   pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
 
@@ -259,11 +246,10 @@ fkill() {
     echo $pid | xargs kill -${1:-9}
   fi
 }
-alias fkill='fkill'
 
 # interactive cd
 # https://github.com/changyuheng/zsh-interactive-cd
-source zsh-interactive-cd.plugin.zsh
+source ~/zsh-interactive-cd.plugin.zsh
 
 # load nvm
 nvml() {
@@ -272,3 +258,7 @@ nvml() {
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 }
 alias nvml='nvml'
+
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
