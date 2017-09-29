@@ -247,10 +247,6 @@ fzf_kill() {
   fi
 }
 
-# interactive cd
-# https://github.com/changyuheng/zsh-interactive-cd
-source ~/zsh-interactive-cd.plugin.zsh
-
 # load nvm
 nvml() {
   export NVM_DIR="$HOME/.nvm"
