@@ -50,6 +50,10 @@
     # Save credentials to memory
     cache = !git config credential.helper cache
 
+    # better git log
+    # git lg -p <file> to show changed lines
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
 [color]
     ui = true
 
