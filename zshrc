@@ -129,6 +129,7 @@ eval "$(rbenv init -)"
 
 # golang
 export GOPATH="$HOME/go"
+export GOBIN="$GOPATH/bin"
 export PATH="$PATH:$GOPATH/bin"
 
 # bundle exec alias
