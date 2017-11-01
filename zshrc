@@ -131,6 +131,7 @@ eval "$(rbenv init -)"
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 export PATH="$PATH:$GOPATH/bin"
+alias cdgo="cd $GOPATH/src/"
 
 # bundle exec alias
 alias bex="bundle exec"
