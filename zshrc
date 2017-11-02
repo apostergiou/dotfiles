@@ -1,3 +1,4 @@
+# Basic {
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -55,8 +56,9 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(debian web-search git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
+# }
 
-# User configuration
+# User configuration {
 
 export TERM=xterm-256color
 
@@ -122,32 +124,11 @@ alias shutdown="sudo shutdown 0"
 alias reboot="sudo reboot 0"
 alias suspend="systemctl suspend"
 
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.rbenv/shims:$PATH"
-eval "$(rbenv init -)"
-
-# golang
-export GOPATH="$HOME/go"
-export GOBIN="$GOPATH/bin"
-export PATH="$PATH:$GOPATH/bin"
-alias cdgo="cd $GOPATH/src/"
-
-# bundle exec alias
-alias bex="bundle exec"
-
-# emacsclient alias
-alias em="emacsclient -t"
-
 # zsh-autosuggestions
 bindkey '^ ' autosuggest-accept
 
-# vim-stlye (hjkl) navigation for GNU info
-# alias info='info --vi-keys'
-
 # open github page based on the remote.origin.url property of the git config
 alias github=GitHub
-
 function GitHub()
 {
     if [ ! -d .git ] ;
@@ -173,7 +154,38 @@ function GitHub()
     xdg-open $url
 }
 
-# fzf
+# linuxbrew
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
+# }
+
+# Languages {
+# ruby
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
+eval "$(rbenv init -)"
+# bundle exec alias
+alias bex="bundle exec"
+
+# golang
+export GOPATH="$HOME/go"
+export GOBIN="$GOPATH/bin"
+export PATH="$PATH:$GOPATH/bin"
+alias cdgo="cd $GOPATH/src/"
+
+# js
+# load nvm
+nvml() {
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+}
+alias nvml='nvml'
+
+# }
+
+# fzf {
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # fzf with preview window and code highlighting
@@ -252,15 +264,4 @@ fzf_kill() {
     echo $pid | xargs kill -${1:-9}
   fi
 }
-
-# load nvm
-nvml() {
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-}
-alias nvml='nvml'
-
-export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
+# }
