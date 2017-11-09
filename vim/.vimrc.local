@@ -54,6 +54,94 @@ set noautochdir
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype eruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 " mute highlighting
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+
+" tell vim to use both project and gem tags
+set tags+=gems.tags
+
+" Stop showing annoying Rails warning
+let g:syntastic_eruby_ruby_quiet_messages =
+    \ {'regex': 'possibly useless use of a variable in void context'}
+
+" Customize
+let g:indent_guides_enable_on_vim_startup = 0
+
+" Use neocomplete
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" <TAB>: completion
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" vim-go
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+" :GoDef
+au Filetype go nmap gd <Plug>(go-def)
+" :GoDocBrowser
+au Filetype go nmap gb <Plug>(go-doc-browser)
+
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+" ctags
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+        \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+        \ },
+            \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \},
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+    \}
+
+" Remove indent highlighting
+set nolist
+
+set tags=./tags,tags;$HOME
+
+" Syntastic {
+let g:syntastic_mode_map = {
+    \ 'mode': 'passive',
+    \ 'active_filetypes': ['python', 'ruby', 'javascript'],
+    \ 'passive_filetypes': []
+    \ }
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+"  }
+
+let NERDTreeQuitOnOpen=0
+
+" autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql,ruby
+" autocmd BufWritePre <buffer> if !exists('g:spf13_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
