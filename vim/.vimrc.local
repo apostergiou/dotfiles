@@ -145,3 +145,8 @@ let NERDTreeQuitOnOpen=0
 
 " autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql,ruby
 " autocmd BufWritePre <buffer> if !exists('g:spf13_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
+
+" enable "visual" wrapping
+set wrap
+" turn off physical line wrapping (ie: automatic insertion of newlines)
+set textwidth=0 wrapmargin=0
