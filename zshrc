@@ -188,6 +188,8 @@ alias nvml='nvml'
 # fzf {
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+alias findz='find * -type f | fzf'
+
 # fzf with preview window and code highlighting
 fzf_preview() {
   fzf --preview '[[ $(file --mime {}) =~ binary ]] &&
