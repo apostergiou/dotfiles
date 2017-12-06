@@ -159,3 +159,10 @@ nnoremap N Nzzzv
 " Same when moving up and down
 noremap <C-d> <C-d>zz
 noremap <C-u> <C-u>zz"
+
+" Statusline
+let g:airline_theme = 'dark'
+
+" Syntastic check
+noremap <Leader>l :SyntasticCheck<CR>
+noremap <Leader><C-l> :SyntasticReset<CR>
