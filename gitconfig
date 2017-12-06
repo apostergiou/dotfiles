@@ -10,6 +10,7 @@
     f = fetch -p
     m = checkout master
     d = diff
+    fold = commit --amend
 
     #
     # improve work flow
