@@ -86,7 +86,8 @@ let g:go_highlight_build_constraints = 1
 au Filetype go nmap gd <Plug>(go-def)
 " :GoDocBrowser
 au Filetype go nmap gb <Plug>(go-doc-browser)
-
+" :GoDef vertical
+au FileType go nmap <Leader>gD <Plug>(go-def-vertical)
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
