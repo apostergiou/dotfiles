@@ -23,7 +23,7 @@ local git_branch='$(git_prompt_info)%{$reset_color%}'
 # PROMPT="╭─${user_host} ${ruby} ${git_branch}
 # ╰─%B${user_symbol}%b "
 #
-PROMPT="[%D{%m/%f/%y}|%D{%L:%M:%S}] ${user_host} ${git_branch}${user_symbol} "
+PROMPT="[%T] ${user_host} ${git_branch}${user_symbol} "
 
 RPS1="%B${return_code}%b"
 
