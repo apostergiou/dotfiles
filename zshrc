@@ -154,9 +154,6 @@ function GitHub()
     xdg-open $url
 }
 
-# pip install thefuck
-eval $(thefuck --alias)
-
 # }
 
 # Languages {
