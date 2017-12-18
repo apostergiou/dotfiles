@@ -154,10 +154,9 @@ function GitHub()
     xdg-open $url
 }
 
-# linuxbrew
-export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
+# pip install thefuck
+eval $(thefuck --alias)
+
 # }
 
 # Languages {
