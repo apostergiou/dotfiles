@@ -167,3 +167,6 @@ let g:airline_theme = 'dark'
 " Syntastic check
 noremap <Leader>l :SyntasticCheck<CR>
 noremap <Leader><C-l> :SyntasticReset<CR>
+
+" Show relative line numbers
+set relativenumber
