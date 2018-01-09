@@ -23,7 +23,7 @@
     up = pull --rebase --prune
     rb = rebase -i origin/master
     rba = rebase -i --autosquash origin/master
-    confl = !git ggrep -e '<<<' -e '>>>' -e '^=======$'
+    confl = !git ggrep -e '<<<<<<< HEAD' -e '>>>>>>>' -e '^=======$'
     stash-all = stash save --include-untracked
 
     # keep the commit only for git reflog usage and as a reference
