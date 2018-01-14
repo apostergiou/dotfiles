@@ -100,7 +100,7 @@ set tags=./tags,tags;$HOME
 " Syntastic {
 let g:syntastic_mode_map = {
     \ 'mode': 'passive',
-    \ 'active_filetypes': ['python', 'ruby', 'javascript'],
+    \ 'active_filetypes': [],
     \ 'passive_filetypes': []
     \ }
 
