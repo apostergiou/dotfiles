@@ -1,0 +1,150 @@
+/* https://askubuntu.com/questions/522833/how-to-dump-all-dconf-gsettings-so-that-i-can-compare-them-between-two-different */
+/* https://unix.stackexchange.com/questions/199836/how-can-i-view-the-content-of-a-backup-of-the-dconf-database-file */
+
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+screensaver='<Primary><Alt>l'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Primary><Alt>t'
+command='gnome-terminal'
+name='Terminal'
+
+[org/gnome/terminal/legacy]
+dark-theme=true
+new-terminal-mode='tab'
+default-show-menubar=false
+schema-version=uint32 3
+theme-variant='system'
+
+[org/gnome/terminal/legacy/keybindings]
+paste='<Primary>y'
+copy='<Alt>w'
+prev-tab='<Primary><Shift>Page_Up'
+toggle-menubar='F12'
+
+[org/gnome/terminal/legacy/profiles:/:Dracula]
+foreground-color='#9494A3A3A5A5'
+visible-name='Dracula'
+palette=['#444447475a5a', '#ffff55555555', '#5050fafa7b7b', '#ffffb8b86c6c', '#8b8be9e9fdfd', '#bdbd9393f9f9', '#ffff7979c6c6', '#9494A3A3A5A5', '#000000000000', '#ffff55555555', '#5050fafa7b7b', '#ffffb8b86c6c','#8b8be9e9fdfd', '#bdbd9393f9f9', '#ffff7979c6c6', '#ffffffffffff']
+cursor-shape='ibeam'
+use-theme-colors=false
+use-theme-background=false
+bold-color-same-as-fg=true
+bold-color='#9494A3A3A5A5'
+background-color='#28282a2a3636'
+audible-bell=true
+
+[org/gnome/terminal/legacy/profiles:]
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', '4a41dfa4-fc3f-48de-8196-bda2c1c85f36', 'Dracula']
+default='b1dcc9dd-5262-4d8d-a863-c897e6d979b9'
+
+[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+foreground-color='rgb(101,123,131)'
+rewrap-on-resize=true
+scrollbar-policy='never'
+login-shell=false
+palette=['rgb(0,0,0)', 'rgb(204,0,0)', 'rgb(78,154,6)', 'rgb(196,160,0)', 'rgb(52,101,164)', 'rgb(117,80,123)', 'rgb(6,152,154)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(138,226,52)', 'rgb(252,233,79)', 'rgb(114,159,207)', 'rgb(173,127,168)', 'rgb(52,226,226)', 'rgb(238,238,236)']
+visible-name='Apostolis'
+default-size-columns=79
+cursor-background-color='rgb(238,238,236)'
+cursor-shape='block'
+cursor-colors-set=false
+highlight-colors-set=false
+scroll-on-output=false
+use-theme-colors=true
+cursor-foreground-color='rgb(85,87,83)'
+font='Bitstream Vera Sans 13'
+allow-bold=true
+use-system-font=true
+bold-color-same-as-fg=true
+bold-color='rgb(233,185,110)'
+background-color='rgb(253,246,227)'
+audible-bell=true
+highlight-background-color='rgb(164,0,0)'
+highlight-foreground-color='rgb(239,41,41)'
+
+[org/gnome/terminal/legacy/profiles:/:Default]
+foreground-color='#9494a3a3a5a5'
+visible-name='Default'
+palette=['#070736364242', '#dcdc32322f2f', '#858599990000', '#b5b589890000', '#26268b8bd2d2', '#ecec00004848', '#2a2aa1a19898', '#9494a3a3a5a5', '#58586e6e7575', '#cbcb4b4b1616', '#858599990000', '#b5b589890000','#26268b8bd2d2', '#d3d336368282', '#2a2aa1a19898', '#6c6c7171c4c4']
+cursor-shape='ibeam'
+use-theme-colors=false
+use-theme-background=false
+bold-color-same-as-fg=true
+bold-color='#9494a3a3a5a5'
+background-color='#25252e2e3232'
+audible-bell=true
+
+[org/gnome/desktop/wm/preferences]
+button-layout=':minimize,maximize,close'
+focus-mode='click'
+theme='Esco'
+num-workspaces=1
+
+[org/gnome/desktop/wm/keybindings]
+maximize=['<Super>k']
+unmaximize=['<Super>j', '<Alt>F5']
+move-to-workspace-up=['<Shift><Super>Up', '<Control><Shift><Alt>Up']
+move-to-workspace-1=['<Primary><Alt>q']
+move-to-workspace-2=['<Primary><Alt>w']
+move-to-workspace-3=['<Primary><Alt>e']
+move-to-workspace-4=['<Primary><Alt>r']
+switch-to-workspace-2=['<Primary><Alt>2']
+switch-to-workspace-3=['<Primary><Alt>3']
+switch-to-workspace-1=['<Primary><Alt>1']
+switch-to-workspace-down=['<Super>Down', '<Control><Alt>Down']
+move-to-monitor-left=['<Primary><Super>h']
+switch-to-workspace-4=['<Primary><Alt>4']
+switch-to-workspace-last=['<Super>semicolon']
+switch-to-workspace-right=['<Shift><Super>Insert']
+move-to-monitor-down=['<Shift><Super>j']
+move-to-monitor-right=['<Primary><Super>l']
+move-to-workspace-down=['<Shift><Super>Down', '<Control><Shift><Alt>Down']
+move-to-monitor-up=['<Shift><Super>k']
+minimize=@as []
+switch-to-workspace-left=['<Shift><Super>Delete']
+switch-to-workspace-up=['<Super>Up', '<Control><Alt>Up']
+
+[org/gnome/shell/extensions/system-monitor]
+position='right'
+thermal-show-text=false
+center-display=false
+cpu-individual-cores=false
+disk-graph-width=50
+gpu-display=false
+show-tooltip=true
+compact-display=false
+disk-show-text=false
+net-show-text=false
+icon-display=false
+thermal-graph-width=65
+net-style='graph'
+memory-graph-width=50
+background='#000000ff'
+cpu-show-menu=true
+thermal-display=false
+memory-style='digit'
+memory-show-text=false
+thermal-sensor-file='/sys/class/hwmon/hwmon0/temp1_input'
+thermal-style='digit'
+move-clock=false
+thermal-show-menu=true
+battery-display=false
+cpu-style='graph'
+cpu-display=true
+cpu-graph-width=50
+disk-display=true
+cpu-show-text=false
+memory-display=true
+
+[org/gnome/pomodoro/preferences]
+pomodoro-duration=1200.0
+
+[org/gnome/pomodoro/plugins/sounds]
+pomodoro-start-sound='loud-bell.ogg'
+pomodoro-start-sound-volume=0.10000000000000001
+pomodoro-end-sound-volume=0.10000000000000001
+pomodoro-end-sound='bell.ogg'
+ticking-sound-volume=0.10000000000000001
+ticking-sound=''
