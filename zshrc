@@ -165,6 +165,8 @@ eval "$(rbenv init -)"
 alias bex="bundle exec"
 
 # golang
+#
+export PATH=$PATH:/usr/local/go/bin
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 export PATH="$PATH:$GOPATH/bin"
@@ -263,3 +265,5 @@ fzf_kill() {
   fi
 }
 # }
+
+unalias grv
