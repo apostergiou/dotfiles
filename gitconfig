@@ -26,6 +26,9 @@
     confl = !git ggrep -e '<<<<<<< HEAD' -e '>>>>>>>' -e '^=======$'
     stash-all = stash save --include-untracked
 
+    # create an empty commit with sample message
+    empty = !git commit --allow-empty -m "placeholder"
+
     # keep the commit only for git reflog usage and as a reference
     wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
 
@@ -44,8 +47,8 @@
     # Delete all branches except master
     brdforce = !git branch | grep -v "master" | xargs git branch -D
 
-	# Search commit logs
-	# e.g. git cgrep "module"
+    # Search commit logs
+    # e.g. git cgrep "module"
     cgrep = "!f() { git log --reverse --patch --pickaxe-all -S \"$1\"; }; f"
 
     # Save credentials to memory
