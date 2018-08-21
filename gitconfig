@@ -103,6 +103,9 @@
 [url "https://bitbucket.org/"]
     insteadOf = bb:
 
+[url "git@github.com.com:"]
+    insteadOf = "https://github.com/"
+
 [user]
     name = Apostolis Stergiou
     email = apostergiou@gmail.com
