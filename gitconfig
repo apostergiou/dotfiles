@@ -61,6 +61,10 @@
     # git history for file
     history = "!f() { git log --follow -p \"$1\"; }; f"
 
+    # git history of lines
+    # usage: git evolution 122,138:app/api/shop/orders.rb
+    evolution = "!f() { git log -L \"$1\"; }; f"
+
 [color]
     ui = true
 
