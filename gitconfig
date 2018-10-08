@@ -107,7 +107,7 @@
 [url "https://bitbucket.org/"]
     insteadOf = bb:
 
-[url "git@github.com.com:"]
+[url "git@github.com:"]
     insteadOf = "https://github.com/"
 
 [user]
