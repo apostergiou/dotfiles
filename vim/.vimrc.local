@@ -31,8 +31,8 @@ function! Multiple_cursors_after()
 endfunction
 
 " Set column length
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+" match OverLength /\%81v.\+/
 
 " Reload config
 augroup reload_vimrc " {
@@ -134,11 +134,18 @@ noremap <C-d> <C-d>zz
 noremap <C-u> <C-u>zz"
 
 " Statusline
-let g:airline_theme = 'dark'
+let g:airline_theme = 'solarized'
 
 " Syntastic check
 noremap <Leader>l :SyntasticCheck<CR>
 noremap <Leader><C-l> :lclose<CR>
 
-" Show relative line numbers
-set relativenumber
+set norelativenumber
+
+" minibufexpl mappings
+nnoremap <silent> <leader>bn :MBEbn<cr>
+nnoremap <silent> <leader>bp :MBEbp<cr>
+nnoremap <silent> <leader>bb :MBEbb<cr>
+nnoremap <silent> <leader>bf :MBEbf<cr>
+nnoremap <silent> <leader>bl :buffers<cr>
+nnoremap <silent> <leader>bt :MBEToggle<cr>

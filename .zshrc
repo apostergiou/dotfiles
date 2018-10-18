@@ -166,10 +166,10 @@ alias bex="bundle exec"
 
 # golang
 #
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH="$HOME/go"
-export GOBIN="$GOPATH/bin"
-export PATH="$PATH:$GOPATH/bin"
+export GOPATH=$HOME/go-workspace # don't forget to change your path correctly!
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 alias cdgo="cd $GOPATH/src/"
 
 # js
@@ -267,3 +267,4 @@ fzf_kill() {
 # }
 
 unalias grv
+unalias gcp
