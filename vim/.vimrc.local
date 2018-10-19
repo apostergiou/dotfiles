@@ -149,3 +149,7 @@ nnoremap <silent> <leader>bb :MBEbb<cr>
 nnoremap <silent> <leader>bf :MBEbf<cr>
 nnoremap <silent> <leader>bl :buffers<cr>
 nnoremap <silent> <leader>bt :MBEToggle<cr>
+
+" debugging shortcuts
+au Filetype ruby nmap ,p obinding.pry<ESC>
+au Filetype go nmap ,p ofmt.Printf("Message......\n %v \n", arg)<ESC>
