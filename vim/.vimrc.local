@@ -152,4 +152,4 @@ nnoremap <silent> <leader>bt :MBEToggle<cr>
 
 " debugging shortcuts
 au Filetype ruby nmap ,p obinding.pry<ESC>
-au Filetype go nmap ,p ofmt.Printf("Message......\n %v \n", arg)<ESC>
+au Filetype go nmap ,p ofmt.Printf("Message......\n %v \n", arg)<cr>runtime.Breakpoint()<ESC>
