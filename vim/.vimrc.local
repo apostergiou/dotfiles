@@ -153,3 +153,11 @@ nnoremap <silent> <leader>bt :MBEToggle<cr>
 " debugging shortcuts
 au Filetype ruby nmap ,p obinding.pry<ESC>
 au Filetype go nmap ,p ofmt.Printf("Message......\n %v \n", arg)<cr>runtime.Breakpoint()<ESC>
+
+" spell check
+" ]s and [s for moving
+" zg to add to known words
+" z= to correct the word with suggestions
+set spell
+hi clear SpellBad
+hi SpellBad cterm=underline
