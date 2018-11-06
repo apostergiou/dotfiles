@@ -1,4 +1,14 @@
+/* ctags generation */
 tags
+
+/* playground directory */
 test_apostolis.*
+
+/* python */
 *.pyc
+
+/* ignore IDE configuration */
 *.idea
+
+/* silver searcher ignored patterns */
+*.ignore
