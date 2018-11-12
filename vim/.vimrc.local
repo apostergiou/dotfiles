@@ -151,8 +151,8 @@ nnoremap <silent> <leader>bl :buffers<cr>
 nnoremap <silent> <leader>bt :MBEToggle<cr>
 
 " debugging shortcuts
-au Filetype ruby nmap ,p obinding.pry<ESC>
-au Filetype go nmap ,p ofmt.Printf("Message......\n %v \n", arg)<cr>runtime.Breakpoint()<ESC>
+au Filetype ruby nmap <silent> <leader>p obinding.pry<ESC>
+au Filetype go nmap <silent> <leader>p ofmt.Printf("Message......\n %v \n", arg)<cr>runtime.Breakpoint()<ESC>
 
 " spell check
 " ]s and [s for moving
@@ -161,3 +161,5 @@ au Filetype go nmap ,p ofmt.Printf("Message......\n %v \n", arg)<cr>runtime.Brea
 set spell
 hi clear SpellBad
 hi SpellBad cterm=underline
+
+nnoremap <silent> <leader>x :tabedit! ~/scratch<cr>
