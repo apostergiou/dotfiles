@@ -95,6 +95,7 @@ nmap <F8> :TagbarToggle<CR>
 " Remove indent highlighting
 set nolist
 
+" Ruby - ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths) --verbose=yes
 set tags=./tags,tags;$HOME
 
 " Syntastic {
