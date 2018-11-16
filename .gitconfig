@@ -65,6 +65,9 @@
     # usage: git evolution 122,138:app/api/shop/orders.rb
     evolution = "!f() { git log -L \"$1\"; }; f"
 
+    # git add patch includes new files
+    gapan = !git add --intent-to-add . && git add --patch
+
 [color]
     ui = true
 
@@ -86,7 +89,7 @@
 
 [core]
     editor = vim
-    excludesfile = ~/.gitignore_global
+	excludesfile = /Users/apostolisstergiou/.gitignore_global
 
 [push]
     default = simple
@@ -107,9 +110,8 @@
 [url "https://bitbucket.org/"]
     insteadOf = bb:
 
-[url "git@github.com:"]
-    insteadOf = "https://github.com/"
-
 [user]
     name = Apostolis Stergiou
     email = apostergiou@gmail.com
+[url "git@github.com:"]
+	insteadOf = https://github.com/
