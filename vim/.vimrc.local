@@ -45,7 +45,7 @@ augroup END " }
 let g:indent_guides_enable_on_vim_startup = 0
 
 nnoremap <silent> <leader>/ :Ag<CR>
-nnoremap <silent> <C-P> :Files<CR>
+nnoremap <leader>. :Files<CR>
 
 " Do not change dir automatically
 set noautochdir
