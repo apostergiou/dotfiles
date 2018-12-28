@@ -166,6 +166,9 @@ alias bex="bundle exec"
 
 # golang
 #
+# Execute `mkdir -p $GOPATH $GOPATH/src $GOPATH/pkg $GOPATH/bin`
+# after installing go and setting the ENV variables to create the
+# appropriate directories.
 export GOPATH=$HOME/go-workspace # don't forget to change your path correctly!
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
