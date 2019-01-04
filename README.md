@@ -23,3 +23,5 @@
 19) fzf
 20) silver searcher
 21) zsh autosuggestions
+22) bat
+23) asciinema
