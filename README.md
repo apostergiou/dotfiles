@@ -25,3 +25,4 @@
 21) zsh autosuggestions
 22) bat
 23) asciinema
+24) fd
