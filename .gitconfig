@@ -25,6 +25,7 @@
     rba = rebase -i --autosquash origin/master
     confl = !git ggrep -e '<<<<<<< HEAD' -e '>>>>>>>' -e '^=======$'
     stash-all = stash save --include-untracked
+    sha = !git log | grep -m1 -oE '[^ ]+$'
 
     # remove branches that have been deleted from remote
     bprune = "!f() { git fetch -p |git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -d; }; f"
