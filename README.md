@@ -26,3 +26,4 @@
 22) bat
 23) asciinema
 24) fd
+25) tmux plugin manager
