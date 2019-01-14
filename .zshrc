@@ -115,7 +115,7 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
 # ls
-alias ls='ls --color'
+alias ls='ls -G'
 LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
 export LS_COLORS
 
@@ -272,7 +272,10 @@ fzf_kill() {
 unalias grv
 unalias gcp
 
-random-string()
-{
+random-string() {
     cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1
+}
+
+agg() {
+    ag --hidden --ignore .git -f -g "$1"
 }
