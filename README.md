@@ -27,3 +27,4 @@
 23) asciinema
 24) fd
 25) tmux plugin manager
+26) ncdu
