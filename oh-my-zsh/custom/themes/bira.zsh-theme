@@ -6,7 +6,7 @@ if [[ $UID -eq 0 ]]; then
     local user_symbol='%{$terminfo[bold]$fg[red]%}%#%{$reset_color%}'
 else
     local user_host='%{$terminfo[bold]$fg[green]%}%n%{$reset_color%}'
-    local user_symbol='%{$terminfo[bold]$fg[green]%}$%{$reset_color%}'
+    local user_symbol='%{$terminfo[bold]$fg[green]%}λ%{$reset_color%}'
 fi
 
 local current_dir='%{$terminfo[bold]$fg[blue]%}%~%{$reset_color%}'
@@ -20,7 +20,7 @@ else
 fi
 local git_branch='$(git_prompt_info)%{$reset_color%}'
 
-PROMPT="[%T] ${git_branch}${user_symbol} "
+PROMPT="%T | ${git_branch}${user_symbol} "
 
 RPS1="%B${return_code}%b"
 
