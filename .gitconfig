@@ -72,6 +72,9 @@
     # git add patch includes new files
     gapan = !git add --intent-to-add . && git add --patch
 
+    # find commit that introduced string
+    sgrep = "!f() { git log -S \"$1\" --source --all; }; f"
+
 [color]
     ui = true
 
