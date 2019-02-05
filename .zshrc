@@ -279,3 +279,7 @@ random-string() {
 agg() {
     ag --hidden --ignore .git -f -g "$1"
 }
+
+agh() {
+    ag --hidden --ignore .git "$1"
+}
