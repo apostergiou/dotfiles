@@ -75,6 +75,8 @@
     # find commit that introduced string
     sgrep = "!f() { git log -S \"$1\" --source --all; }; f"
 
+    # find who created a remote branch e.g., on Github
+    bblame = "!f() { git for-each-ref --format='%(color:cyan)%(authordate:format:%m/%d/%Y %I:%M %p) %(align:25,left)%(color:yellow)%(authorname)%(end) %(color:reset)%(refname:strip=3)' --sort=authordate refs/remotes; }; f"
 [color]
     ui = true
 
@@ -96,7 +98,7 @@
 
 [core]
     editor = vim
-	excludesfile = /Users/apostolisstergiou/.gitignore_global
+	excludesfile = /Users/apostergiou/.gitignore_global
 
 [push]
     default = simple
