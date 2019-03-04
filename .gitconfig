@@ -77,6 +77,9 @@
 
     # find who created a remote branch e.g., on Github
     bblame = "!f() { git for-each-ref --format='%(color:cyan)%(authordate:format:%m/%d/%Y %I:%M %p) %(align:25,left)%(color:yellow)%(authorname)%(end) %(color:reset)%(refname:strip=3)' --sort=authordate refs/remotes; }; f"
+
+    # drop all local changes
+    drop = !git checkout -- .
 [color]
     ui = true
 
