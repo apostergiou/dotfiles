@@ -29,3 +29,4 @@
 - skaffold (repeatable Kubernetes development)
 - kubectx (switch faster between clusters and namespaces in kubectl)
 - octodown (markdown previewing from shell)
+- htrace (http/https troubleshooting and profiling)
