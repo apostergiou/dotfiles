@@ -80,6 +80,12 @@
 
     # drop all local changes
     drop = !git checkout -- .
+
+    # interactive switch between branhes
+    coi = "!f() { git checkout $(git branch | fzf); }; f"
+
+    # interactive git log
+    logi = "!f() { git log --pretty=oneline | fzf; }; f"
 [color]
     ui = true
 
