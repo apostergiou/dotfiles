@@ -281,5 +281,5 @@ agg() {
 }
 
 agh() {
-    ag --hidden --ignore .git "$1"
+    ag --hidden -U -f -g "$1"
 }
