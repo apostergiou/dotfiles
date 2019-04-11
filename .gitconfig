@@ -86,6 +86,9 @@
 
     # interactive git log
     logi = "!f() { git log --pretty=oneline | fzf; }; f"
+
+    # delete local branches that don't exist in upstream
+    sync = remote update --prune
 [color]
     ui = true
 
