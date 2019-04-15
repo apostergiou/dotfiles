@@ -284,3 +284,14 @@ agg() {
 agh() {
     ag --hidden -U -f -g "$1"
 }
+
+# will rewrite PATH
+path-time() {
+    path_before=$PATH
+    echo $PATH |
+        sed 's/:/\n/g' |
+        while read path; do
+            PATH=$path:/usr/bin command time -f "%e $path" which ls > /dev/null
+        done
+    export PATH=$path_before
+}
