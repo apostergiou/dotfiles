@@ -277,12 +277,16 @@ random-string() {
     cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1
 }
 
-agg() {
-    ag --hidden --ignore .git -f -g "$1"
+agh() {
+   ag --hidden --ignore .git "$1"
 }
 
-agh() {
-    ag --hidden -U -f -g "$1"
+agf() {
+    ag -f -g "$1"
+}
+
+agfh() {
+    ag --hidden --ignore .git -f -g "$1"
 }
 
 # will rewrite PATH
