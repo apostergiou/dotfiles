@@ -196,3 +196,5 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
 color seoul256
+
+set background=light
