@@ -277,6 +277,11 @@ random-string() {
     cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1
 }
 
+# geolocation
+gii () {
+  curl -s http://ipinfo.io/ $(dig +short "$1" | head -1) | jq
+}
+
 agh() {
    ag --hidden --ignore .git "$1"
 }
