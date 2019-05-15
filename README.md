@@ -32,3 +32,4 @@
 - htrace (http/https troubleshooting and profiling)
 - gawk (GNU awk utility)
 - shellcheck (shell script analysis tool)
+- httpie (command line HTTP client)
