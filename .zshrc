@@ -304,3 +304,9 @@ path-time() {
         done
     export PATH=$path_before
 }
+
+# sort processes by cpu usage
+pscpu() { ps -e -o pcpu,cpu,nice,state,cputime,args --sort pcpu | sed '/^ 0.0 /d' }
+
+# sort processes by ram usage
+psram() { ps -e -orss=,args= | sort -b -k1,1n | pr -TW$COLUMNS }
