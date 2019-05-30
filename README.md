@@ -33,3 +33,6 @@
 - gawk (GNU awk utility)
 - shellcheck (shell script analysis tool)
 - httpie (command line HTTP client)
+- ncdu (disk usage)
+- shellcheck (shell script analysis tool)
+
