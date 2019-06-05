@@ -33,7 +33,6 @@
 - gawk (GNU awk utility)
 - shellcheck (shell script analysis tool)
 - httpie (command line HTTP client)
-- ncdu (disk usage)
 - shellcheck (shell script analysis tool)
 - k9s (kubernetes CLI to manage clusters)
-- stern(multi pod and container log tailing for kubernetes)
+- stern (multi pod and container log tailing for kubernetes)
