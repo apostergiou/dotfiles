@@ -2,17 +2,13 @@
 
 - essentials: `$ apt install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev`
 - rbenv (ruby environment grooming)
-- ruby (dynamic, open source programming language)
 - bundler (ruby dependency management)
 - go (statically typed, compiled programming language)
 - zsh (shell designed for interactive use)
 - tmux (terminal multiplexer for Unix-like operating systems)
 - tig (text-mode interface for git)
-- vim (editor for editing programs and other plain text files)
 - vim spf edition (vim distribution)
-- vundle (plug-in manager for Vim)
 - oh-my-zsh (framework for managing your zsh configuration)
-- taskwarrior (manage your TODO list from the command line)
 - docker (operating-system-level virtualization)
 - vagrant (create and configure reproducible and portable development environments)
 - node (JavaScript runtime)
@@ -36,3 +32,5 @@
 - shellcheck (shell script analysis tool)
 - k9s (kubernetes CLI to manage clusters)
 - stern (multi pod and container log tailing for kubernetes)
+- awscli (AWS cli)
+- aws-shell (integrated shell for working with the AWS CLI)
