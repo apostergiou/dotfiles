@@ -35,3 +35,4 @@
 - awscli (AWS cli)
 - aws-shell (integrated shell for working with the AWS CLI)
 - mkdocs (static site generator that's geared towards building project documentation)
+- tmux-xpanes (tmux-based terminal divider)
