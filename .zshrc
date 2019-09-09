@@ -310,3 +310,8 @@ pscpu() { ps -e -o pcpu,cpu,nice,state,cputime,args --sort pcpu | sed '/^ 0.0 /d
 
 # sort processes by ram usage
 psram() { ps -e -orss=,args= | sort -b -k1,1n | pr -TW$COLUMNS }
+
+# tmux ssh
+function ssht (){
+    /usr/bin/ssh -t $@ "tmux attach -t $(whoami) || tmux new-session -s $(whoami)";
+}
