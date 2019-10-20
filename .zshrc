@@ -115,7 +115,7 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
 # ls
-alias ls='ls -G'
+alias ls='ls --color'
 LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
 export LS_COLORS
 
@@ -166,11 +166,8 @@ alias bex="bundle exec"
 
 # golang
 #
-# Execute `mkdir -p $GOPATH $GOPATH/src $GOPATH/pkg $GOPATH/bin`
-# after installing go and setting the ENV variables to create the
-# appropriate directories.
-export GOPATH=$HOME/go-workspace # don't forget to change your path correctly!
-export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME/go # don't forget to change your path correctly!
+export GOROOT=/usr/local/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 export GO111MODULE="on"
@@ -178,12 +175,11 @@ alias cdgo="cd $GOPATH/src/"
 
 # js
 # load nvm
-nvml() {
+fnvml() {
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 }
-alias nvml='nvml'
 
 # }
 
@@ -278,20 +274,20 @@ random-string() {
 }
 
 # geolocation
-gii () {
+function gii() {
   curl -s http://ipinfo.io/ $(dig +short "$1" | head -1) | jq
 }
 
 agh() {
-   ag --hidden --ignore .git "$1"
+  ag --hidden --ignore .git "$1"
 }
 
 agf() {
-    ag -f -g "$1"
+  ag -f -g "$1"
 }
 
 agfh() {
-    ag --hidden --ignore .git -f -g "$1"
+  ag --hidden --ignore .git -f -g "$1"
 }
 
 # will rewrite PATH
@@ -315,3 +311,6 @@ psram() { ps -e -orss=,args= | sort -b -k1,1n | pr -TW$COLUMNS }
 function ssht (){
     /usr/bin/ssh -t $@ "tmux attach -t $(whoami) || tmux new-session -s $(whoami)";
 }
+
+# red stderr
+exec 2>>(while read line; do echo -e "\e[01;31m$line\e[0m" >&2; done)
