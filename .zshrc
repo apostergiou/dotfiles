@@ -275,19 +275,19 @@ random-string() {
 
 # geolocation
 function gii() {
-  curl -s http://ipinfo.io/ $(dig +short "$1" | head -1) | jq
+    curl -s http://ipinfo.io/ $(dig +short "$1" | head -1) | jq
 }
 
 agh() {
-  ag --hidden --ignore .git "$1"
+   ag --hidden --ignore .git "$1"
 }
 
 agf() {
-  ag -f -g "$1"
+    ag -f -g "$1"
 }
 
 agfh() {
-  ag --hidden --ignore .git -f -g "$1"
+    ag --hidden --ignore .git -f -g "$1"
 }
 
 # will rewrite PATH
@@ -313,4 +313,9 @@ function ssht (){
 }
 
 # red stderr
-exec 2>>(while read line; do echo -e "\e[01;31m$line\e[0m" >&2; done)
+# exec 2>>(while read line; do echo -e "\e[01;31m$line\e[0m" >&2; done)
+
+# autosuggestions color
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
+
+
