@@ -201,5 +201,8 @@ autocmd! User GoyoLeave Limelight!
 
 color seoul256
 
+" simpler Rainbow Parentheses and brackets
+let g:rainbow_active = 1
+
 nnoremap <leader>h :set cursorline!<CR>
 nnoremap <leader>j :set cursorcolumn!<CR>
