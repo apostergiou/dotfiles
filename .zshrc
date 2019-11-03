@@ -307,10 +307,8 @@ pscpu() { ps -e -o pcpu,cpu,nice,state,cputime,args --sort pcpu | sed '/^ 0.0 /d
 # sort processes by ram usage
 psram() { ps -e -orss=,args= | sort -b -k1,1n | pr -TW$COLUMNS }
 
-# tmux ssh
-function ssht (){
-    /usr/bin/ssh -t $@ "tmux attach -t $(whoami) || tmux new-session -s $(whoami)";
-}
+# start tor browser
+tor() { /home/apostergiou/tor-browser_en-US/start-tor-browser.desktop }
 
 # red stderr
 # exec 2>>(while read line; do echo -e "\e[01;31m$line\e[0m" >&2; done)
@@ -320,3 +318,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 
 # du current directory
 dust () { du -d 1 -h | sort -h }
+
+# bat config
+export BAT_THEME="Monokai Extended Light"
