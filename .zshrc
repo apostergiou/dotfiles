@@ -318,4 +318,5 @@ function ssht (){
 # autosuggestions color
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 
-
+# du current directory
+dust () { du -d 1 -h | sort -h }
