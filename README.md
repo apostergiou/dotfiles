@@ -37,3 +37,4 @@
 - mkdocs (static site generator that's geared towards building project documentation)
 - tmux-xpanes (tmux-based terminal divider)
 - wdiff (front end to diff for comparing files on a word per word basis)
+- pdfgrep (pdf text search)
