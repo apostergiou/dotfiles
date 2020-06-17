@@ -12,3 +12,4 @@ Bundle 'christoomey/vim-tmux-runner'
 Bundle 'andreypopp/vim-colors-plain'
 Bundle 'junegunn/rainbow_parentheses.vim'
 Bundle 'frazrepo/vim-rainbow'
+Bundle "junegunn/goyo.vim"
