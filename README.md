@@ -38,3 +38,5 @@
 - tmux-xpanes (tmux-based terminal divider)
 - wdiff (front end to diff for comparing files on a word per word basis)
 - pdfgrep (pdf text search)
+- curlie
+- httpstat
